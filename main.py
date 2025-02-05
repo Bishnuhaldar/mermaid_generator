@@ -3,7 +3,7 @@ from streamlit.components.v1 import html
 import re
 import google.generativeai as genai
 
-genai.configure(api_key="AIzaSyAMZQu6XRaCLGo9sJJMU9xnmVVmaC_EeGk")
+genai.configure(api_key="AIzaSyCeuxn0i3iVgbnAmlOqOL35uKbuzob0fIY")
 model = genai.GenerativeModel("gemini-1.5-flash")
 
 
