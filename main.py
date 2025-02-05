@@ -1,31 +1,16 @@
 import streamlit as st
 from streamlit.components.v1 import html
-from groq import Groq
-from dotenv import load_dotenv
 import re
-load_dotenv()
+import google.generativeai as genai
+
+genai.configure(api_key="AIzaSyAMZQu6XRaCLGo9sJJMU9xnmVVmaC_EeGk")
+model = genai.GenerativeModel("gemini-1.5-flash")
+
 
 
 def get_response(query):
-    client = Groq()
-    completion = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
-        messages=[{
-            "role": "user",
-            "content": query
-        }],
-        temperature=1,
-        max_tokens=1024,
-        top_p=1,
-        stream=True,
-        stop=None,
-    )
-
-    response = ""
-    for chunk in completion:
-        content = chunk.choices[0].delta.content or ""
-        response += content  # Store for return
-    return response
+    response = model.generate_content(query)
+    return response.text
 
 # Set page configuration
 st.set_page_config(page_title="Architecture Digram Generator", layout="wide")
