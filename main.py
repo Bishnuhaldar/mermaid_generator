@@ -3,8 +3,9 @@ from streamlit.components.v1 import html
 import re
 import google.generativeai as genai
 
-genai.configure(api_key="AIzaSyBuuk83zH6aEYiO4YKVLwgABvuDf2GHR70")
-model = genai.GenerativeModel("gemini-1.5-flash")
+# Configure the OpenAI API
+key = "AIzaSyBuuk83zH6aEYiO4YKVLwgABvuDf2GHR70"
+genai.configure(api_key=key)
 
 generation_config = {
     "temperature": 1,
