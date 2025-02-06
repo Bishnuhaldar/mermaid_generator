@@ -15,7 +15,7 @@ def get_response(query):
 # Set page configuration
 st.set_page_config(page_title="Architecture Digram Generator", layout="wide")
 
-st.title('Architecture Digram Generator')
+st.title('Architecture Digram Generator test')
 
 user_input=st.text_area('Enter your query:')
 prompt_for_generating_mermaid = f"""Create a precise Mermaid diagram (version 11.4.1) that visualizes the following user input:
