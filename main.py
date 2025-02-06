@@ -4,7 +4,7 @@ import re
 import google.generativeai as genai
 
 # Configure the OpenAI API
-key = "AIzaSyBuuk83zH6aEYiO4YKVLwgABvuDf2GHR70"
+key = "AIzaSyCiMCV_baOczaXAeQkhmMKH0IXin535RzI"
 genai.configure(api_key=key)
 
 generation_config = {
