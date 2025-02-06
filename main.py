@@ -6,7 +6,12 @@ import google.generativeai as genai
 genai.configure(api_key="AIzaSyBuuk83zH6aEYiO4YKVLwgABvuDf2GHR70")
 model = genai.GenerativeModel("gemini-1.5-flash")
 
-
+generation_config = {
+    "temperature": 1,
+    "top_p": 0.95,
+    "top_k": 64,
+    "max_output_tokens": 8192,
+}
 
 # def get_response(query):
 #     response = model.generate_content(query)
