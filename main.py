@@ -8,8 +8,16 @@ model = genai.GenerativeModel("gemini-1.5-flash")
 
 
 
-def get_response(query):
-    response = model.generate_content(query)
+# def get_response(query):
+#     response = model.generate_content(query)
+#     return response.text
+
+def get_response(prompt):
+    model = genai.GenerativeModel(
+        model_name="gemini-1.5-flash-latest",
+        generation_config=generation_config,
+    )
+    response = model.generate_content(prompt)
     return response.text
 
 # Set page configuration
